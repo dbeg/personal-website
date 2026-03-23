@@ -3,6 +3,63 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<h1>begh.in</h1>
-	<p>The personal website of Dan Beghin</p>
+	<main>
+		<h1>begh.in</h1>
+		<p>The personal website of Dan Beghin</p>
+	</main>
 </Layout>
+
+<style>
+	body {
+		background-color: #CCD5AE;
+		color: #232129;
+		font-size: 24px;
+		font-family: sans-serif;
+		padding: 0;
+		margin: 0;
+	}
+
+	main {
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		background-color: #CCD5AE;
+		background: linear-gradient(100deg, #CCD5AE, #E9EDC9, #FEFAE0, #FAEDCD, #D4A373);
+		background-size: 1000% 100%;
+
+		-webkit-animation: MainAnimation 120s ease-in-out infinite;
+		-moz-animation: MainAnimation 120s ease-in-out infinite;
+		animation: MainAnimation 120s ease-in-out infinite;
+	}
+
+	@-webkit-keyframes MainAnimation {
+		0% { background-position: 0% 0%; }
+		50% { background-position: 100% 0%; }
+		100% { background-position: 0% 0%; }
+	}
+	@-moz-keyframes Animation {
+		0% { background-position: 0% 0%; }
+		50% { background-position: 100% 0%; }
+		100% { background-position: 0% 0%; }
+	}
+	@keyframes MainAnimation { 
+		0% { background-position: 0% 0%; }
+		50% { background-position: 100% 0%; }
+		100% { background-position: 0% 0%; }
+	}
+
+	h1 {
+		text-align: center;
+		margin: 0;
+		font-size: 4.5vw;
+		text-decoration: underline;
+	}
+
+	p {
+		text-align: center;
+		margin: 0;
+		font-size: 1vw;
+	}
+</style>
