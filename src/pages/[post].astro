@@ -2,16 +2,17 @@
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 
+type Post = CollectionEntry<'posts'>;
+
 export async function getStaticPaths() {
 	const posts = await getCollection('posts');
-	return posts.map((post: any) => ({
+	return posts.map((post: Post) => ({
 		params: { post: post.id },
 		props: post,
 	}));
 }
-type Props = CollectionEntry<'posts'>;
 
-const post = Astro.props;
+const post = Astro.props as Post;
 const { Content } = await render(post);
 const formatDate = (date: Date) => date.toISOString().slice(0, 10);
 ---
