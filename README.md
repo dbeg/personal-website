@@ -36,4 +36,5 @@ This project outputs static files (`/dist`) and can be hosted on any static prov
 
 ## License
 
-The content of this project itself is licensed under the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license, and the underlying source code used to format and display that content is licensed under the [GNU GPLv2](https://choosealicense.com/licenses/gpl-2.0/) license.
+- **Website content** (for example, markdown/posts, images, and other media under `content/`, `public/`, or similar asset directories) is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). See [`LICENSE-CONTENT`](./LICENSE-CONTENT) for the full terms that apply to this material.
+- **Source code** (for example, files under `src/`, configuration, and build scripts) is licensed under [GNU GPLv2](https://choosealicense.com/licenses/gpl-2.0/). See [`LICENSE`](./LICENSE) for the full terms that apply to the code in this repository.
