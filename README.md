@@ -33,3 +33,8 @@ Commits and PRs to non-`main` branches trigger Cloudflare Pages preview deployme
 Commits to `main` trigger Cloudflare Pages production deployments.
 
 This project outputs static files (`/dist`) and can be hosted on any static provider, e.g., Cloudflare Pages, GitHub Pages, Netlify, Vercel, S3, etc...
+
+## License
+
+- **Website content** (for example, markdown/posts, images, and other media under `content/`, `public/`, or similar asset directories) is licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). See [`LICENSE-CONTENT`](./LICENSE-CONTENT) for the full terms that apply to this material.
+- **Source code** (for example, files under `src/`, configuration, and build scripts) is licensed under [GNU GPLv2](https://choosealicense.com/licenses/gpl-2.0/). See [`LICENSE`](./LICENSE) for the full terms that apply to the code in this repository.
