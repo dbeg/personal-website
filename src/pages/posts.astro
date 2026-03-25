@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+type Post = CollectionEntry<'posts'>;
+
+const posts = (await getCollection('posts')).sort(
+	(a: Post, b: Post) => b.data.datePublished.valueOf() - a.data.datePublished.valueOf(),
+);
+---
+<Layout>
+    <ul>
+        { posts.map((post: Post) => <li><a href={ `/${post.id}` }>{ post.data.title }</a></li>) }
+    </ul>
+</Layout>
+
+<style>
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    li {
+        margin-bottom: 1rem;
+    }
+</style>

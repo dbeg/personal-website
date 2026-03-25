@@ -1,0 +1,36 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+type Post = CollectionEntry<'posts'>;
+
+export async function getStaticPaths() {
+	const posts = await getCollection('posts');
+	return posts.map((post: Post) => ({
+		params: { post: post.id },
+		props: post,
+	}));
+}
+
+const post = Astro.props as Post;
+const { Content } = await render(post);
+
+{/*
+	Format as YYYY-MM-DD, using UTC to avoid any possible timezone issues.
+	In the future if we start supporting time, we can extend this function.
+*/}
+const formatDate = (date: Date): string => {
+	const year = date.getUTCFullYear();
+	const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+	const day = String(date.getUTCDate()).padStart(2, '0');
+	return `${year}-${month}-${day}`;
+};
+---
+<Layout>
+	<h1>{ post.data.title }</h1>
+	<p>{ post.data.description }</p>
+	<p><em>Published on { formatDate(post.data.datePublished) }</em></p>
+	{ post.data.dateUpdated && <p><em>Updated on { formatDate(post.data.dateUpdated) }</em></p> }
+	<hr />
+	<Content />
+</Layout>
