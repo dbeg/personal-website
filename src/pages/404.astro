@@ -2,11 +2,23 @@
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout>
-    <title>Ope! Page not found | begh.in</title>
-    <h1>Ope! Page not found!</h1>
-    <p>
-        <span role="img" aria-label="Pensive emoji">😔</span>{' '}
-        I couldn't find what you were looking for.{' '}
-        <a href="/">Go home</a>.
-    </p>
+    <main>
+        <title>Ope! Page not found | begh.in</title>
+        <h1>Ope! Page not found!</h1>
+        <p>
+            <span role="img" aria-label="Pensive emoji">😔</span>{' '}
+            I couldn't find what you were looking for.{' '}
+            <a href="/">Go home</a>.
+        </p>
+    </main>
 </Layout>
+
+<style>
+    main {
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+    }
+</style>
